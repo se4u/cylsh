@@ -116,7 +116,7 @@ PRNearNeighborStructT initSelfTunedRNearNeighborWithDataSet(RealT thresholdR,
   }
 
   TIMEV_END(timeInit);
-  printf("Time for initializing: %0.6lf\n", timeInit);
+  DPRINTF("Time for initializing: %0.6lf\n", timeInit);
   DPRINTF("Allocated memory: %lld\n", totalAllocatedMemory);
 
   TimeVarT timeAdding = 0;
