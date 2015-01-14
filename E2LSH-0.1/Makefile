@@ -23,13 +23,13 @@ TEST_BUILDS:=exactNNs \
 	    genPlantedDS
 
 GCC:=g++
-OPTIONS:=-O3 -DREAL_FLOAT -DDEBUG
+OPTIONS:=-O3 -DREAL_FLOAT -DPERFORM_NEYSHABUR_MIPS
 # -march=athlon -msse -mfpmath=sse
 LIBRARIES:=-lm 
 #-ldmalloc
 
-all: 
-	bin/compile
+all: # bin/compile
+	$(MAKE) c
 
 c: compile
 

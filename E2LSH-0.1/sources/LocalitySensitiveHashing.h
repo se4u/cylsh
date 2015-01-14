@@ -16,7 +16,7 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *   Authors: Alexandr Andoni (andoni@mit.edu), Piotr Indyk (indyk@mit.edu)
 */
-
+#include "BucketHashing.h"
 #ifndef LOCALITYSENSITIVEHASHING_INCLUDED
 #define LOCALITYSENSITIVEHASHING_INCLUDED
 

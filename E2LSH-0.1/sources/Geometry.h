@@ -16,7 +16,7 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *   Authors: Alexandr Andoni (andoni@mit.edu), Piotr Indyk (indyk@mit.edu)
 */
-
+#include "BasicDefinitions.h"
 #ifndef GEOMETRY_INCLUDED
 #define GEOMETRY_INCLUDED
 

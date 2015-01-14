@@ -13,6 +13,7 @@ nQuerySet=` wc -l "$3"`
 for x in $nQuerySet; do nQuerySet=$x; break; done
 dimension=`head -1 "$2" | wc -w`
 
-#echo $nDataSet $nQuerySet $dimension
+echo $nDataSet $nQuerySet $dimension $successProbability $1 "$2" "$3"
 
-bin/exactNNs $nDataSet $nQuerySet $dimension $successProbability $1 "$2" "$3"
+# bin/exactNNs $nDataSet $nQuerySet $dimension $successProbability $1 "$2" "$3"
+# python exactMIPS.py "$2" "$3" (but this needs the true MIPS file)

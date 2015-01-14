@@ -13,7 +13,7 @@ nQuerySet=` wc -l "$2"`
 for x in $nQuerySet; do nQuerySet=$x; break; done
 dimension=`head -1 "$1" | wc -w`
 
-#echo $nDataSet $nQuerySet $dimension
+echo $nDataSet $nQuerySet $dimension
 
 if [ -e bin/mem ]; then
   m=`cat bin/mem`;
@@ -24,4 +24,5 @@ else
   echo $m > bin/mem
 fi
 
-bin/LSHMain $nDataSet $nQuerySet $dimension $successProbability 1.0 "$1" "$2" $m -p "$3"
+echo "running command: " bin/LSHMain $nDataSet $nQuerySet $dimension $successProbability 1.0 "$1" "$2" $m -p "$3"
+time bin/LSHMain $nDataSet $nQuerySet $dimension $successProbability 1.0 "$1" "$2" $m -p "$3"

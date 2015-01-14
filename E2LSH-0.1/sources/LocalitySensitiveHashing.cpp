@@ -122,7 +122,11 @@ void initHashFunctions(PRNearNeighborStructT nnStruct){
 #endif
       }
       // b
+#ifdef PERFORM_NEYSHABUR_MIPS
+      lshFunctions[i][j].b = 0;
+#else
       lshFunctions[i][j].b = genUniformRandom(0, nnStruct->parameterW);
+#endif
     }
   }
 
@@ -416,8 +420,11 @@ inline void computeULSH(PRNearNeighborStructT nnStruct, IntT gNumber, RealT *poi
     for(IntT d = 0; d < nnStruct->dimension; d++){
       value += point[d] * nnStruct->lshFunctions[gNumber][i].a[d];
     }
-  
+#ifdef PERFORM_NEYSHABUR_MIPS
+    vectorValue[i] = (Uns32T)((value>=0)?1:-1);
+#else
     vectorValue[i] = (Uns32T)(FLOOR_INT32((value + nnStruct->lshFunctions[gNumber][i].b) / nnStruct->parameterW) /* - MIN_INT32T*/);
+#endif
   }
 }
 
