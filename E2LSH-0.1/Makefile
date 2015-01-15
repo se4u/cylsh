@@ -22,18 +22,17 @@ TEST_BUILDS:=exactNNs \
 	    compareOutputs \
 	    genPlantedDS
 
-GCC:=g++
-OPTIONS:=-O3 -DREAL_FLOAT -DPERFORM_NEYSHABUR_MIPS
+GCC:=g++ -O3
+OPTIONS =  -DREAL_FLOAT $$MIPS
 # -march=athlon -msse -mfpmath=sse
 LIBRARIES:=-lm 
 #-ldmalloc
+MIPS_OPT_EXTRACTOR = if [ $* == mips ] ; then export MIPS=-DPERFORM_NEYSHABUR_MIPS; else export MIPS=-DNO_MIPS; fi; echo $$MIPS
+binaries_%:
+	$(MIPS_OPT_EXTRACTOR);\
+	$(MAKE) c && $(MAKE) ct
 
-all: # bin/compile
-	$(MAKE) c
-
-c: compile
-
-compile:
+c:
 	@mkdir -p $(OUT_DIR)
 	$(GCC) -o $(OUT_DIR)/$(LSH_BUILD) $(OPTIONS) $(OBJ_SOURCES) $(SOURCES_DIR)/$(LSH_BUILD).cpp $(LIBRARIES)
 	chmod g+rwx $(OUT_DIR)/$(LSH_BUILD)
@@ -43,23 +42,21 @@ ct:
 	(for i in $(TEST_BUILDS); do \
 	 $(GCC) -o $(OUT_DIR)/$$i $(OPTIONS) $(OBJ_SOURCES) $(TEST_DIR)/$${i}.cpp $(LIBRARIES); chmod g+rwx $(OUT_DIR)/$$i; done)
 
-zip:
-	zip -r LSHarchive.zip Makefile sources bin Documentation
-	chmod g+rw LSHarchive.zip
+CC = $$MYCOMPILER $(OPTIONS)
+CXX = $$MYCOMPILER $(OPTIONS)
+# This create cylsh.so
+cython_binding_%:
+	if which icpc >	/dev/null; then\
+          export MYCOMPILER='icpc -fast';\
+        else\
+          export MYCOMPILER=='g++ -O3';\
+        fi; \
+	$(MIPS_OPT_EXTRACTOR);\
+	cd sources_py; \
+	CC="$(CC)" CXX="$(CXX)" DOMIPS=$$MIPS python setup.py build_ext --inplace
 
+test_cython_binding_%:
+	time PYTHONPATH=$$PWD/sources_py python -c "import cylsh, numpy; db=cylsh.LSH(0.7, 0.9,numpy.asarray([[.1, .7],[.11, .69]]), numpy.asarray([[.1, .7]]), 1e6); print db.query(numpy.array([.1, .7]));"
 
-ship:
-	\rm -rf E2LSH-0.1
-	mkdir E2LSH-0.1
-	cp -r manual.ps sources Makefile gpl.txt E2LSH-0.1
-	\rm -rf E2LSH-0.1/sources/CVS
-	cp mnist1k.dts05 E2LSH-0.1/mnist1k.dts
-	cp mnist10k_q05 E2LSH-0.1/mnist1k.q
-	mkdir E2LSH-0.1/bin
-	cp bin/compile bin/exact bin/lsh* E2LSH-0.1/bin 
-	\rm -f E2LSH-0.1.tar E2LSH-0.1.tar.gz
-	tar -cvf E2LSH-0.1.tar E2LSH-0.1/
-	gzip -c E2LSH-0.1.tar > E2LSH-0.1.tar.gz
-	\rm -f E2LSH-0.1.tar
-	chmod -R g+rw E2LSH-0.1
-	chmod g+rw E2LSH-0.1.tar.gz
+clean:
+	rm -rf sources_py/build sources_py/cylsh.cpp cylsh.so bin/LSHMain bin/compareOutputs bin/exactNNs

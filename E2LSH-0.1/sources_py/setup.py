@@ -5,36 +5,41 @@ from distutils.extension import Extension
 from distutils.spawn import find_executable
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
-import os
+import os, numpy
+macros=[]
+compile_time_env = {}
+if os.environ["DOMIPS"]=="-DPERFORM_NEYSHABUR_MIPS":
+    compile_time_env["DOMIPS"]="yes"
+else:
+    compile_time_env["DOMIPS"]="no"
 
-compiler = "g++"
-if find_executable('icpc') is not None:
-    compiler = "icpc"
-COMP_OPT = "%s -fast -DREAL_FLOAT -DPERFORM_NEYSHABUR_MIPS"%compiler
-os.environ["CC"]=COMP_OPT
-os.environ["CXX"]=COMP_OPT
 modules = [Extension("cylsh",
                      ["cylsh.pyx",
                       "lsh.pxd",
-                      "NearNeighbors.cpp",
-                      "BucketHashing.cpp",
-                      "Geometry.cpp",
-                      "LocalitySensitiveHashing.cpp",
-                      "Random.cpp",
-                      "Util.cpp",
-                      "GlobalVars.cpp",
-                      "SelfTuning.cpp",
+                      "../sources/NearNeighbors.cpp",
+                      "../sources/BucketHashing.cpp",
+                      "../sources/Geometry.cpp",
+                      "../sources/LocalitySensitiveHashing.cpp",
+                      "../sources/Random.cpp",
+                      "../sources/Util.cpp",
+                      "../sources/GlobalVars.cpp",
+                      "../sources/SelfTuning.cpp",
                       ],
                      language = "c++",
                      libraries=["m"],
-                     library_dirs=["/Applications/Canopy.app/appdata/canopy-1.1.0.1371.macosx-x86_64/Canopy.app/Contents/lib"],
+                     include_dirs=["../sources", numpy.get_include()],
+                     define_macros=macros,
+                     # library_dirs=[""],
                      # extra_compile_args=[""],
                      # extra_link_args=[""]
                      )]
 
 for e in modules:
     e.cython_directives = {"embedsignature" : True}
+    e.boundscheck=False
+    e.overflowcheck=False
     
 setup(name = "cylsh",
-    ext_modules = modules,
+    ext_modules = cythonize(modules,
+                            compile_time_env=compile_time_env),
     cmdclass={"build_ext": build_ext})

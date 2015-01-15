@@ -21,13 +21,13 @@ getRNearNeighbors      |                     | NearNeighbors
 """
 __author__="pushpendre"
 
-cdef extern from "BasicDefinitions.h":
+cdef extern from "../sources/BasicDefinitions.h":
     ctypedef int IntT
     ctypedef int Int32T
     ctypedef float RealT
     ctypedef long long int MemVarT
 
-cdef extern from "Geometry.h":
+cdef extern from "../sources/Geometry.h":
     struct _PointT:
         IntT index
         RealT* coordinates
@@ -35,12 +35,12 @@ cdef extern from "Geometry.h":
     ctypedef _PointT PointT
     ctypedef PointT* PPointT
     
-cdef extern from "LocalitySensitiveHashing.h":
+cdef extern from "../sources/LocalitySensitiveHashing.h":
     ctypedef struct RNearNeighborStructT:
         pass
     ctypedef RNearNeighborStructT* PRNearNeighborStructT
 
-cdef extern from "NearNeighbors.h":
+cdef extern from "../sources/NearNeighbors.h":
     PRNearNeighborStructT initSelfTunedRNearNeighborWithDataSet(
         RealT thresholdR,
         RealT successProbability,
