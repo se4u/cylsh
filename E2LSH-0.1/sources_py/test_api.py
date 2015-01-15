@@ -9,7 +9,7 @@ LSH_OR_MIPS=sys.argv[1]
 dataset = np.loadtxt(sys.argv[2])
 queryset= np.loadtxt(sys.argv[3])
 seed = 1234
-num_query_pnt = 30
+num_query_pnt = 10
 np.random.seed(seed)
 
 if LSH_OR_MIPS == "lsh":
@@ -22,8 +22,8 @@ indices = np.random.randint(dataset.shape[0], size=num_query_pnt)
 sample_query = dataset[indices,:]
 print "Building datasets now"
 
-dbs = [cylsh.LSH(R*0.1, 0.9, dataset, sample_query, 1e9)
-       for R in [8]]
+dbs = [cylsh.LSH(R, 0.9, dataset, sample_query, 1e9)
+       for R in [6]]
 for i in xrange(queryset.shape[0]):
     q = queryset[i]
     for db in dbs:
@@ -34,7 +34,7 @@ for i in xrange(queryset.shape[0]):
         # find I = intersection of lsh_neighbors and true_nbrs
         # Divide |I|/|lsh_neighbors| (=L)
         # print lsh_neighbors
-        # print [e[0] for e in true_nbrs[:len(lsh_neighbors)]]
+        print [e[0] for e in true_nbrs[:len(lsh_neighbors)]]
         L = len(lsh_neighbors)
         I = len(set(lsh_neighbors).intersection(set(e[0] for e in true_nbrs)))
         print (I/L, I, L) if L != 0 else 0

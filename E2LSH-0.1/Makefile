@@ -68,3 +68,9 @@ test_guass_cython_%: sample_data/guass.dts sample_data/guass.q
 
 clean:
 	rm -rf sources_py/build sources_py/cylsh.cpp cylsh.so bin/LSHMain bin/compareOutputs bin/exactNNs
+
+create_appended_data_file_for_use_with_binaries_%: sample_data/%.dts sample_data/%.q
+	python sources_py/convert_mnist_data_to_bounded_data_by_dividing_by_norm_and_appending_diff.py $(word 1,$+) train > $(word 1,$+).mips
+	python sources_py/convert_mnist_data_to_bounded_data_by_dividing_by_norm_and_appending_diff.py $(word 2,$+) query > $(word 2,$+).mips
+test_with_binaries_%:
+	bin/lsh 6 sample_data/$*.dts.mips sample_data/$*.q.mips 
