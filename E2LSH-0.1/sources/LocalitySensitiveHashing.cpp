@@ -613,6 +613,7 @@ Int32T getNearNeighborsFromPRNearNeighborStruct(PRNearNeighborStructT nnStruct, 
 
   Int32T nNeighbors = 0;// the number of near neighbors found so far.
   Int32T nMarkedPoints = 0;// the number of marked points
+
   for(IntT i = 0; i < nnStruct->parameterL; i++){ 
     TIMEV_START(timeGetBucket);
     GeneralizedPGBucket gbucket;
@@ -740,7 +741,16 @@ Int32T getNearNeighborsFromPRNearNeighborStruct(PRNearNeighborStructT nnStruct, 
 	      if (nNeighbors >= resultSize){
 		// run out of space => resize the <result> array.
 		resultSize = 2 * resultSize;
-		result = (PPointT*)REALLOC(result, resultSize * sizeof(PPointT));
+		PPointT* newResult = (PPointT*)REALLOC(result,
+						       resultSize * sizeof(PPointT));
+
+		if(!newResult){
+		  fprintf(stderr, "OMG we could not realloc");
+		  fflush(stderr);
+		  exit(1);
+		} else {
+		  result = newResult;
+		}
 	      }
 	      result[nNeighbors] = candidatePoint;
 	      nNeighbors++;
@@ -762,16 +772,13 @@ Int32T getNearNeighborsFromPRNearNeighborStruct(PRNearNeighborStructT nnStruct, 
     TIMEV_END(timeCycleBucket);
     
   }
-
   timingOn = oldTimingOn;
   TIMEV_END(timeTotalBuckets);
-
   // we need to clear the array nnStruct->nearPoints for the next query.
   for(Int32T i = 0; i < nMarkedPoints; i++){
     ASSERT(nnStruct->markedPoints[nnStruct->markedPointsIndeces[i]] == TRUE);
     nnStruct->markedPoints[nnStruct->markedPointsIndeces[i]] = FALSE;
   }
   DPRINTF("nMarkedPoints: %d\n", nMarkedPoints);
-
   return nNeighbors;
 }

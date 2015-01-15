@@ -1,16 +1,17 @@
 #clib library_with_useful_functions
 #cython: nonecheck=True
-#cython: boundscheck=False
+#cython: boundscheck=True
 """This cython file provides a single class, the LSH class, that can be
 initialized and then queried.
 """
 import time, cython
 import numpy as np
 cimport numpy as np
+np.import_array()
 cimport lsh
 from lsh cimport PRNearNeighborStructT, PointT, PPointT, IntT, Int32T, RealT, initSelfTunedRNearNeighborWithDataSet, getRNearNeighbors
-from cpython.mem cimport PyMem_Malloc, PyMem_Free
-
+#from cpython.mem cimport PyMem_Malloc, PyMem_Free
+from libc.stdlib cimport malloc, free
 DTYPE=np.float
 ctypedef np.float_t DTYPE_t
 cdef RealT* create_coordinates_ptr(
@@ -19,7 +20,7 @@ cdef RealT* create_coordinates_ptr(
     """ Simply copy over the data from numpy array
     to a RealT array
     """
-    c = <RealT*>PyMem_Malloc(dimension*sizeof(RealT))
+    c = <RealT*>malloc(dimension*sizeof(RealT))
     for j in xrange(dimension):
         c[j]=coordinate_vector[j]
     return c
@@ -29,13 +30,13 @@ cdef PPointT* create_dataset_ptr(
     int len_dataset,
     int dimension,
     ):
-    dataset_ptr=<PPointT*>PyMem_Malloc(len_dataset*sizeof(PPointT))
+    dataset_ptr=<PPointT*>malloc(len_dataset*sizeof(PPointT))
     for i in xrange(len_dataset):
-        p = <PPointT>PyMem_Malloc(sizeof(PointT))
+        p = <PPointT>malloc(sizeof(PointT))
         p.index=i
         p.coordinates=create_coordinates_ptr(dataset[i],
                                              dimension)
-        p.sqrLength=1
+        p.sqrLength=1.0
         dataset_ptr[i]=p
     return dataset_ptr
 
@@ -93,6 +94,7 @@ cdef class LSH:
                                         self.dimension)
         _p_sampleQueries = create_dataset_ptr(
             sampleQueries, len_sampleQueries, self.dimension)
+            
         self._nnStruct = initSelfTunedRNearNeighborWithDataSet(
             thresholdR,
             successProbability,
@@ -122,14 +124,16 @@ cdef class LSH:
                 (queryvector/np.linalg.norm(queryvector),
                  np.zeros(1)))
             queryPoint.sqrLength = 1
-        
+        ELSE:
+            queryPoint.sqrLength = np.sum(np.square(queryvector))
         queryPoint.coordinates = create_coordinates_ptr(
             queryvector, self.dimension)
+        cdef Int32T resultSize = 100
         cdef PPointT* result = create_dataset_ptr(
-            np.zeros([1, self.dimension], DTYPE),
-            1,
+            np.zeros([resultSize, self.dimension], DTYPE),
+            resultSize,
             self.dimension)
-        cdef Int32T resultSize = 0
+        
         st = time.clock()
         num_neighbor = getRNearNeighbors(
             self._nnStruct,
@@ -138,9 +142,9 @@ cdef class LSH:
             resultSize
             )
         et = time.clock() - st
-        ret_list = [result[i].index
-                    for i
-                    in xrange(num_neighbor)]
+        ret_list = np.zeros(num_neighbor, np.int)
+        for i in xrange(num_neighbor):
+            ret_list[i] = result[i].index
         return dict(neighbors=ret_list,
                     time_taken=et)
 

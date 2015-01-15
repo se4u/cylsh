@@ -36,10 +36,12 @@ modules = [Extension("cylsh",
 
 for e in modules:
     e.cython_directives = {"embedsignature" : True}
-    e.boundscheck=False
-    e.overflowcheck=False
+    e.boundscheck=True
+    e.overflowcheck=True
     
 setup(name = "cylsh",
-    ext_modules = cythonize(modules,
-                            compile_time_env=compile_time_env),
-    cmdclass={"build_ext": build_ext})
+      ext_modules = cythonize(modules,
+                            compile_time_env=compile_time_env,
+                            ),
+      cmdclass={"build_ext": build_ext}
+      )

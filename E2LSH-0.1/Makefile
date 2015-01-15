@@ -45,7 +45,8 @@ ct:
 CC = $$MYCOMPILER $(OPTIONS)
 CXX = $$MYCOMPILER $(OPTIONS)
 # This create cylsh.so
-cython_binding_%:
+s: cython_binding_mips
+cython_binding_%: # 5Dicpc -fast
 	if which icpc >	/dev/null; then\
           export MYCOMPILER='icpc -fast';\
         else\
@@ -53,10 +54,17 @@ cython_binding_%:
         fi; \
 	$(MIPS_OPT_EXTRACTOR);\
 	cd sources_py; \
-	CC="$(CC)" CXX="$(CXX)" DOMIPS=$$MIPS python setup.py build_ext --inplace
+	CC="$(CC)" CXX="$(CXX)" DOMIPS=$$MIPS python setup.py build_ext --inplace --cython-gdb
 
-test_cython_binding_%:
+e example_cython_api:
 	time PYTHONPATH=$$PWD/sources_py python -c "import cylsh, numpy; db=cylsh.LSH(0.7, 0.9,numpy.asarray([[.1, .7],[.11, .69]]), numpy.asarray([[.1, .7]]), 1e6); print db.query(numpy.array([.1, .7]));"
+
+TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $* $+
+t: test_mnist1k_cython_mips test_guass_cython_mips
+test_mnist1k_cython_%: sample_data/mnist1k.dts sample_data/mnist1k.q
+	$(TEST_CMD)
+test_guass_cython_%: sample_data/guass.dts sample_data/guass.q
+	$(TEST_CMD)
 
 clean:
 	rm -rf sources_py/build sources_py/cylsh.cpp cylsh.so bin/LSHMain bin/compareOutputs bin/exactNNs
