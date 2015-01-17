@@ -1,0 +1,1235 @@
+bin/lsh 6 sample_data/guass.dts.mips sample_data/guass.q.mips 
+R*******
+R*********************
+R-NN DS params computed.
+R*********************
+R*******
+1000 100 301
+running command:  bin/LSHMain 1000 100 301 0.9 1.0 sample_data/guass.dts.mips sample_data/guass.q.mips 22020096 -p sample_data/guass.dts.mips.params
+R
+6.000000000
+Success probability
+0.899999976
+Dimension
+301
+R^2
+36.000000000
+Use <u> functions
+1
+k
+2
+m [# independent tuples of LSH functions]
+4
+L
+6
+W
+4.000000000
+T
+1000
+typeHT
+3
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000414
+Query point 0: found 603 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000363	Distance:1.292392
+000000213	Distance:1.314947
+000000490	Distance:1.322341
+000000817	Distance:1.323125
+000000685	Distance:1.324639
+000000684	Distance:1.329680
+000000378	Distance:1.330315
+000000646	Distance:1.331871
+000000373	Distance:1.333667
+000000205	Distance:1.334483
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000559
+Query point 1: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000307	Distance:1.276900
+000000009	Distance:1.300900
+000000010	Distance:1.304625
+000000338	Distance:1.309024
+000000294	Distance:1.310396
+000000266	Distance:1.312471
+000000728	Distance:1.314929
+000000846	Distance:1.315307
+000000851	Distance:1.316569
+000000524	Distance:1.319180
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000345
+Query point 2: found 603 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000727	Distance:1.301657
+000000713	Distance:1.308876
+000000189	Distance:1.314935
+000000807	Distance:1.320089
+000000162	Distance:1.327557
+000000183	Distance:1.331955
+000000833	Distance:1.332358
+000000850	Distance:1.332835
+000000543	Distance:1.334795
+000000752	Distance:1.335457
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.003777
+Query point 3: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000506	Distance:1.290655
+000000422	Distance:1.310944
+000000825	Distance:1.311867
+000000155	Distance:1.312848
+000000458	Distance:1.319904
+000000947	Distance:1.322404
+000000587	Distance:1.324096
+000000800	Distance:1.325506
+000000445	Distance:1.326662
+000000251	Distance:1.327516
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000398
+Query point 4: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000830	Distance:1.289891
+000000434	Distance:1.301900
+000000699	Distance:1.313958
+000000277	Distance:1.319003
+000000978	Distance:1.321470
+000000032	Distance:1.322868
+000000526	Distance:1.323513
+000000454	Distance:1.327157
+000000181	Distance:1.332973
+000000033	Distance:1.333149
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000561
+Query point 5: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000060	Distance:1.296195
+000000309	Distance:1.298979
+000000559	Distance:1.310439
+000000070	Distance:1.316664
+000000710	Distance:1.323696
+000000259	Distance:1.328033
+000000971	Distance:1.328354
+000000411	Distance:1.331181
+000000842	Distance:1.336319
+000000126	Distance:1.336798
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000425
+Query point 6: found 606 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000753	Distance:1.304047
+000000915	Distance:1.312938
+000000764	Distance:1.313895
+000000436	Distance:1.320948
+000000670	Distance:1.321458
+000000431	Distance:1.329271
+000000779	Distance:1.330351
+000000116	Distance:1.331713
+000000113	Distance:1.334773
+000000464	Distance:1.336761
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000532
+Query point 7: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000140	Distance:1.301217
+000000386	Distance:1.306114
+000000327	Distance:1.316417
+000000551	Distance:1.319725
+000000299	Distance:1.320501
+000000485	Distance:1.321166
+000000803	Distance:1.323125
+000000315	Distance:1.324958
+000000271	Distance:1.328482
+000000035	Distance:1.329063
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000255
+Query point 8: found 379 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000989	Distance:1.278862
+000000623	Distance:1.288592
+000000099	Distance:1.310929
+000000066	Distance:1.319451
+000000681	Distance:1.323819
+000000864	Distance:1.324033
+000000836	Distance:1.327571
+000000870	Distance:1.333306
+000000679	Distance:1.335806
+000000745	Distance:1.336699
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000256
+Query point 9: found 394 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000658	Distance:1.298105
+000000776	Distance:1.320419
+000000960	Distance:1.327797
+000000756	Distance:1.328294
+000000896	Distance:1.332110
+000000017	Distance:1.332588
+000000897	Distance:1.333491
+000000105	Distance:1.333943
+000000126	Distance:1.335490
+000000493	Distance:1.338225
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000614
+Query point 10: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000793	Distance:1.306828
+000000608	Distance:1.318415
+000000777	Distance:1.320164
+000000418	Distance:1.321730
+000000544	Distance:1.329801
+000000902	Distance:1.330382
+000000210	Distance:1.330419
+000000985	Distance:1.330616
+000000554	Distance:1.332979
+000000044	Distance:1.333760
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000487
+Query point 11: found 747 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000805	Distance:1.318725
+000000408	Distance:1.319464
+000000882	Distance:1.321011
+000000389	Distance:1.323490
+000000761	Distance:1.324889
+000000239	Distance:1.326253
+000000214	Distance:1.326621
+000000287	Distance:1.328493
+000000593	Distance:1.331106
+000000072	Distance:1.333654
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000670
+Query point 12: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000456	Distance:1.309170
+000000984	Distance:1.309485
+000000567	Distance:1.312464
+000000487	Distance:1.316449
+000000229	Distance:1.320345
+000000664	Distance:1.323898
+000000974	Distance:1.324606
+000000698	Distance:1.328279
+000000231	Distance:1.328558
+000000362	Distance:1.329533
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000274
+Query point 13: found 379 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000392	Distance:1.286169
+000000039	Distance:1.300321
+000000616	Distance:1.301282
+000000739	Distance:1.315785
+000000832	Distance:1.317742
+000000236	Distance:1.323104
+000000486	Distance:1.328003
+000000350	Distance:1.329828
+000000924	Distance:1.332560
+000000118	Distance:1.337677
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000592
+Query point 14: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000486	Distance:1.276732
+000000442	Distance:1.317474
+000000289	Distance:1.320497
+000000921	Distance:1.321449
+000000132	Distance:1.334872
+000000064	Distance:1.335059
+000000084	Distance:1.335855
+000000485	Distance:1.336598
+000000118	Distance:1.336696
+000000972	Distance:1.336813
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000546
+Query point 15: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000033	Distance:1.301141
+000000790	Distance:1.311960
+000000277	Distance:1.312989
+000000953	Distance:1.317690
+000000156	Distance:1.324571
+000000150	Distance:1.325114
+000000165	Distance:1.329991
+000000415	Distance:1.330074
+000000579	Distance:1.330662
+000000715	Distance:1.332847
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000490
+Query point 16: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000783	Distance:1.286717
+000000659	Distance:1.302940
+000000340	Distance:1.310770
+000000222	Distance:1.320516
+000000322	Distance:1.321067
+000000259	Distance:1.322932
+000000925	Distance:1.324431
+000000447	Distance:1.325675
+000000048	Distance:1.325841
+000000486	Distance:1.328777
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000687
+Query point 17: found 862 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000241	Distance:1.289103
+000000942	Distance:1.310154
+000000898	Distance:1.313993
+000000187	Distance:1.314469
+000000844	Distance:1.315967
+000000920	Distance:1.320241
+000000956	Distance:1.323119
+000000979	Distance:1.328521
+000000031	Distance:1.328910
+000000432	Distance:1.332490
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000493
+Query point 18: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000143	Distance:1.296167
+000000511	Distance:1.310616
+000000801	Distance:1.314942
+000000875	Distance:1.316854
+000000257	Distance:1.318599
+000000870	Distance:1.320640
+000000986	Distance:1.324525
+000000649	Distance:1.326982
+000000486	Distance:1.329111
+000000012	Distance:1.333845
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000728
+Query point 19: found 895 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000126	Distance:1.293374
+000000763	Distance:1.297930
+000000124	Distance:1.301738
+000000063	Distance:1.302258
+000000198	Distance:1.304934
+000000201	Distance:1.308104
+000000255	Distance:1.318681
+000000048	Distance:1.319356
+000000277	Distance:1.319388
+000000903	Distance:1.320634
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000337
+Query point 20: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000303	Distance:1.270907
+000000537	Distance:1.299966
+000000647	Distance:1.322769
+000000166	Distance:1.325112
+000000567	Distance:1.325146
+000000339	Distance:1.328642
+000000739	Distance:1.328937
+000000591	Distance:1.330494
+000000859	Distance:1.330589
+000000702	Distance:1.330732
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000566
+Query point 21: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000985	Distance:1.285132
+000000291	Distance:1.287193
+000000944	Distance:1.293298
+000000164	Distance:1.303410
+000000205	Distance:1.313135
+000000882	Distance:1.318000
+000000563	Distance:1.320992
+000000696	Distance:1.322322
+000000684	Distance:1.322679
+000000414	Distance:1.323145
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000335
+Query point 22: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000896	Distance:1.300336
+000000761	Distance:1.301587
+000000152	Distance:1.311786
+000000470	Distance:1.323007
+000000080	Distance:1.323931
+000000197	Distance:1.328323
+000000174	Distance:1.328387
+000000608	Distance:1.332979
+000000204	Distance:1.333557
+000000729	Distance:1.334043
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000500
+Query point 23: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000454	Distance:1.300898
+000000965	Distance:1.305139
+000000841	Distance:1.314702
+000000811	Distance:1.315554
+000000336	Distance:1.315646
+000000385	Distance:1.323411
+000000661	Distance:1.324665
+000000857	Distance:1.325209
+000000996	Distance:1.326357
+000000802	Distance:1.326465
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000707
+Query point 24: found 895 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000903	Distance:1.287747
+000000986	Distance:1.300142
+000000815	Distance:1.305549
+000000396	Distance:1.305560
+000000225	Distance:1.313044
+000000918	Distance:1.319794
+000000849	Distance:1.319815
+000000830	Distance:1.320431
+000000103	Distance:1.325776
+000000034	Distance:1.327836
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000523
+Query point 25: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000882	Distance:1.308768
+000000907	Distance:1.320712
+000000585	Distance:1.324480
+000000045	Distance:1.327402
+000000730	Distance:1.327518
+000000346	Distance:1.329906
+000000362	Distance:1.330090
+000000987	Distance:1.330646
+000000328	Distance:1.332500
+000000300	Distance:1.333642
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000483
+Query point 26: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000843	Distance:1.303128
+000000638	Distance:1.306138
+000000189	Distance:1.308993
+000000823	Distance:1.309729
+000000741	Distance:1.313980
+000000172	Distance:1.315484
+000000311	Distance:1.320285
+000000122	Distance:1.323039
+000000759	Distance:1.324898
+000000720	Distance:1.326499
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.001270
+Query point 27: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000025	Distance:1.292722
+000000751	Distance:1.306853
+000000708	Distance:1.309451
+000000117	Distance:1.315500
+000000570	Distance:1.317344
+000000201	Distance:1.317576
+000000033	Distance:1.318421
+000000642	Distance:1.318586
+000000724	Distance:1.327386
+000000827	Distance:1.327868
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000488
+Query point 28: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000140	Distance:1.303161
+000000541	Distance:1.319427
+000000849	Distance:1.325943
+000000594	Distance:1.327549
+000000442	Distance:1.329138
+000000410	Distance:1.330721
+000000090	Distance:1.331122
+000000643	Distance:1.334065
+000000861	Distance:1.336017
+000000176	Distance:1.338655
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000369
+Query point 29: found 394 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000179	Distance:1.298907
+000000971	Distance:1.310574
+000000773	Distance:1.316951
+000000678	Distance:1.323896
+000000993	Distance:1.327818
+000000412	Distance:1.332379
+000000828	Distance:1.337357
+000000579	Distance:1.339578
+000000296	Distance:1.339959
+000000537	Distance:1.340207
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000571
+Query point 30: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000536	Distance:1.296578
+000000892	Distance:1.305693
+000000054	Distance:1.310662
+000000799	Distance:1.318968
+000000950	Distance:1.320901
+000000906	Distance:1.320970
+000000104	Distance:1.321176
+000000366	Distance:1.321292
+000000823	Distance:1.324865
+000000207	Distance:1.325796
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000435
+Query point 31: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000826	Distance:1.308340
+000000901	Distance:1.312449
+000000899	Distance:1.314720
+000000718	Distance:1.320690
+000000821	Distance:1.326160
+000000575	Distance:1.326214
+000000616	Distance:1.332201
+000000945	Distance:1.332902
+000000656	Distance:1.333008
+000000009	Distance:1.333155
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000462
+Query point 32: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000536	Distance:1.306280
+000000222	Distance:1.309130
+000000363	Distance:1.310384
+000000032	Distance:1.315858
+000000673	Distance:1.318021
+000000835	Distance:1.319814
+000000452	Distance:1.325196
+000000803	Distance:1.325433
+000000410	Distance:1.327235
+000000422	Distance:1.328133
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.001956
+Query point 33: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000489	Distance:1.322761
+000000251	Distance:1.324194
+000000994	Distance:1.324250
+000000173	Distance:1.324398
+000000864	Distance:1.327442
+000000485	Distance:1.328390
+000000653	Distance:1.328720
+000000499	Distance:1.329327
+000000349	Distance:1.330984
+000000663	Distance:1.331107
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000296
+Query point 34: found 379 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000065	Distance:1.289041
+000000735	Distance:1.302609
+000000911	Distance:1.302785
+000000881	Distance:1.305946
+000000077	Distance:1.331337
+000000962	Distance:1.332087
+000000031	Distance:1.333068
+000000184	Distance:1.335792
+000000066	Distance:1.340107
+000000938	Distance:1.340416
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000465
+Query point 35: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000684	Distance:1.311122
+000000291	Distance:1.312710
+000000020	Distance:1.315408
+000000870	Distance:1.323240
+000000121	Distance:1.323369
+000000290	Distance:1.326185
+000000919	Distance:1.328399
+000000303	Distance:1.334269
+000000815	Distance:1.335928
+000000038	Distance:1.336037
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000654
+Query point 36: found 606 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000039	Distance:1.264666
+000000741	Distance:1.307676
+000000710	Distance:1.311930
+000000399	Distance:1.317657
+000000552	Distance:1.318329
+000000175	Distance:1.318485
+000000939	Distance:1.319920
+000000060	Distance:1.321017
+000000158	Distance:1.322190
+000000423	Distance:1.324387
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000474
+Query point 37: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000993	Distance:1.296441
+000000781	Distance:1.309991
+000000998	Distance:1.313385
+000000326	Distance:1.317131
+000000068	Distance:1.319164
+000000487	Distance:1.319990
+000000972	Distance:1.321901
+000000151	Distance:1.322978
+000000100	Distance:1.325117
+000000250	Distance:1.325900
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000532
+Query point 38: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000171	Distance:1.305353
+000000551	Distance:1.322679
+000000596	Distance:1.328521
+000000026	Distance:1.328983
+000000909	Distance:1.334351
+000000716	Distance:1.338221
+000000095	Distance:1.338285
+000000608	Distance:1.339245
+000000184	Distance:1.341644
+000000924	Distance:1.343129
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000986
+Query point 39: found 862 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000655	Distance:1.262681
+000000588	Distance:1.294921
+000000954	Distance:1.296200
+000000917	Distance:1.314749
+000000589	Distance:1.316183
+000000384	Distance:1.317944
+000000080	Distance:1.319918
+000000316	Distance:1.324345
+000000805	Distance:1.325759
+000000448	Distance:1.326384
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000436
+Query point 40: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000768	Distance:1.273693
+000000207	Distance:1.302433
+000000131	Distance:1.316327
+000000422	Distance:1.319573
+000000274	Distance:1.319925
+000000201	Distance:1.324554
+000000324	Distance:1.326689
+000000725	Distance:1.328004
+000000628	Distance:1.331382
+000000986	Distance:1.333441
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.001103
+Query point 41: found 895 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000620	Distance:1.298888
+000000018	Distance:1.309936
+000000032	Distance:1.316080
+000000454	Distance:1.317883
+000000974	Distance:1.319522
+000000743	Distance:1.321294
+000000633	Distance:1.322022
+000000164	Distance:1.322873
+000000284	Distance:1.323309
+000000592	Distance:1.324603
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000419
+Query point 42: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000308	Distance:1.303092
+000000648	Distance:1.306186
+000000955	Distance:1.316522
+000000602	Distance:1.319273
+000000952	Distance:1.321002
+000000863	Distance:1.323852
+000000948	Distance:1.325225
+000000972	Distance:1.327235
+000000534	Distance:1.328629
+000000105	Distance:1.329435
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000732
+Query point 43: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000923	Distance:1.313124
+000000818	Distance:1.313592
+000000716	Distance:1.315363
+000000594	Distance:1.317366
+000000489	Distance:1.318676
+000000415	Distance:1.321297
+000000963	Distance:1.323213
+000000530	Distance:1.323300
+000000643	Distance:1.325155
+000000566	Distance:1.327088
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000973
+Query point 44: found 747 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000895	Distance:1.253672
+000000355	Distance:1.303538
+000000326	Distance:1.311382
+000000327	Distance:1.323584
+000000446	Distance:1.324947
+000000605	Distance:1.325738
+000000809	Distance:1.327886
+000000927	Distance:1.328586
+000000259	Distance:1.330314
+000000708	Distance:1.331312
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000764
+Query point 45: found 747 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000213	Distance:1.307486
+000000581	Distance:1.320622
+000000943	Distance:1.326909
+000000075	Distance:1.329011
+000000289	Distance:1.329739
+000000400	Distance:1.329834
+000000559	Distance:1.329868
+000000135	Distance:1.336471
+000000347	Distance:1.337387
+000000569	Distance:1.339321
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000493
+Query point 46: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000754	Distance:1.279220
+000000986	Distance:1.290786
+000000726	Distance:1.313589
+000000323	Distance:1.316300
+000000118	Distance:1.316312
+000000551	Distance:1.317556
+000000340	Distance:1.326730
+000000822	Distance:1.328505
+000000536	Distance:1.328873
+000000451	Distance:1.330883
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000426
+Query point 47: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000565	Distance:1.277276
+000000941	Distance:1.301183
+000000145	Distance:1.313378
+000000745	Distance:1.318663
+000000456	Distance:1.319091
+000000036	Distance:1.325544
+000000015	Distance:1.326336
+000000458	Distance:1.328112
+000000962	Distance:1.329001
+000000305	Distance:1.330639
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000480
+Query point 48: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000143	Distance:1.287870
+000000691	Distance:1.296302
+000000291	Distance:1.296440
+000000488	Distance:1.307398
+000000839	Distance:1.309506
+000000731	Distance:1.320218
+000000468	Distance:1.325261
+000000337	Distance:1.327379
+000000759	Distance:1.330102
+000000385	Distance:1.332064
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000492
+Query point 49: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000565	Distance:1.295239
+000000730	Distance:1.314063
+000000623	Distance:1.320241
+000000592	Distance:1.320554
+000000213	Distance:1.322725
+000000245	Distance:1.323772
+000000331	Distance:1.327354
+000000182	Distance:1.330116
+000000647	Distance:1.330897
+000000993	Distance:1.331064
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000683
+Query point 50: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000453	Distance:1.295252
+000000473	Distance:1.304692
+000000018	Distance:1.309517
+000000402	Distance:1.310353
+000000895	Distance:1.312098
+000000779	Distance:1.312319
+000000787	Distance:1.319982
+000000585	Distance:1.322342
+000000666	Distance:1.323597
+000000986	Distance:1.325040
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000453
+Query point 51: found 747 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000085	Distance:1.292779
+000000302	Distance:1.316365
+000000735	Distance:1.322030
+000000364	Distance:1.323639
+000000320	Distance:1.329588
+000000028	Distance:1.331046
+000000584	Distance:1.331117
+000000612	Distance:1.331854
+000000172	Distance:1.332250
+000000231	Distance:1.332513
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000331
+Query point 52: found 520 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000832	Distance:1.306269
+000000423	Distance:1.310176
+000000718	Distance:1.313905
+000000121	Distance:1.324356
+000000735	Distance:1.325626
+000000748	Distance:1.327467
+000000268	Distance:1.330279
+000000709	Distance:1.331870
+000000749	Distance:1.334494
+000000223	Distance:1.334699
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000334
+Query point 53: found 394 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000210	Distance:1.278608
+000000315	Distance:1.299330
+000000134	Distance:1.300196
+000000718	Distance:1.304511
+000000907	Distance:1.314850
+000000822	Distance:1.327442
+000000326	Distance:1.328937
+000000126	Distance:1.329798
+000000967	Distance:1.331492
+000000113	Distance:1.332545
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000375
+Query point 54: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000685	Distance:1.312212
+000000964	Distance:1.321442
+000000702	Distance:1.323629
+000000925	Distance:1.327051
+000000635	Distance:1.327343
+000000686	Distance:1.328342
+000000007	Distance:1.329353
+000000194	Distance:1.334316
+000000338	Distance:1.335606
+000000581	Distance:1.338518
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000715
+Query point 55: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000480	Distance:1.305166
+000000222	Distance:1.312597
+000000696	Distance:1.313936
+000000123	Distance:1.319212
+000000172	Distance:1.321578
+000000373	Distance:1.322470
+000000906	Distance:1.322879
+000000555	Distance:1.325274
+000000855	Distance:1.326958
+000000934	Distance:1.328542
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000390
+Query point 56: found 606 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000411	Distance:1.290797
+000000877	Distance:1.307659
+000000673	Distance:1.309364
+000000273	Distance:1.314141
+000000505	Distance:1.320274
+000000188	Distance:1.323151
+000000022	Distance:1.325182
+000000944	Distance:1.326055
+000000939	Distance:1.329535
+000000451	Distance:1.335002
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000706
+Query point 57: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000001	Distance:1.299614
+000000163	Distance:1.305991
+000000031	Distance:1.306114
+000000870	Distance:1.307390
+000000412	Distance:1.319928
+000000668	Distance:1.320067
+000000599	Distance:1.323005
+000000120	Distance:1.325162
+000000857	Distance:1.325605
+000000814	Distance:1.328649
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000514
+Query point 58: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000080	Distance:1.298039
+000000089	Distance:1.317612
+000000216	Distance:1.324186
+000000499	Distance:1.325437
+000000371	Distance:1.327138
+000000059	Distance:1.327795
+000000840	Distance:1.328407
+000000788	Distance:1.329654
+000000678	Distance:1.330782
+000000183	Distance:1.331738
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000484
+Query point 59: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000447	Distance:1.295939
+000000501	Distance:1.309014
+000000183	Distance:1.311042
+000000683	Distance:1.312960
+000000643	Distance:1.318294
+000000116	Distance:1.319665
+000000777	Distance:1.319874
+000000365	Distance:1.326391
+000000566	Distance:1.327732
+000000205	Distance:1.328403
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000812
+Query point 60: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000963	Distance:1.313016
+000000463	Distance:1.317725
+000000939	Distance:1.321234
+000000759	Distance:1.321843
+000000737	Distance:1.330434
+000000006	Distance:1.330775
+000000518	Distance:1.332762
+000000816	Distance:1.333164
+000000806	Distance:1.333599
+000000135	Distance:1.333612
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000583
+Query point 61: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000521	Distance:1.294717
+000000363	Distance:1.313556
+000000141	Distance:1.318141
+000000405	Distance:1.320851
+000000964	Distance:1.323217
+000000322	Distance:1.324198
+000000168	Distance:1.326267
+000000705	Distance:1.326382
+000000899	Distance:1.327786
+000000508	Distance:1.328222
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000744
+Query point 62: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000735	Distance:1.316534
+000000843	Distance:1.318788
+000000011	Distance:1.320124
+000000143	Distance:1.323776
+000000596	Distance:1.329502
+000000475	Distance:1.330979
+000000944	Distance:1.331125
+000000545	Distance:1.333833
+000000460	Distance:1.334245
+000000206	Distance:1.335673
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000545
+Query point 63: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000174	Distance:1.283587
+000000347	Distance:1.292241
+000000092	Distance:1.296841
+000000823	Distance:1.297025
+000000939	Distance:1.308287
+000000137	Distance:1.310580
+000000831	Distance:1.311848
+000000371	Distance:1.313551
+000000773	Distance:1.320866
+000000217	Distance:1.324264
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000704
+Query point 64: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000716	Distance:1.284237
+000000643	Distance:1.293031
+000000432	Distance:1.305111
+000000534	Distance:1.306580
+000000337	Distance:1.317376
+000000944	Distance:1.317959
+000000460	Distance:1.319157
+000000518	Distance:1.324278
+000000682	Distance:1.324542
+000000377	Distance:1.324780
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000378
+Query point 65: found 606 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000765	Distance:1.319423
+000000909	Distance:1.320670
+000000593	Distance:1.324201
+000000681	Distance:1.324292
+000000524	Distance:1.325812
+000000319	Distance:1.329821
+000000046	Distance:1.331837
+000000307	Distance:1.332414
+000000649	Distance:1.334846
+000000963	Distance:1.335418
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000374
+Query point 66: found 603 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000073	Distance:1.310226
+000000227	Distance:1.311649
+000000639	Distance:1.319174
+000000595	Distance:1.323434
+000000698	Distance:1.324823
+000000262	Distance:1.325229
+000000818	Distance:1.325727
+000000735	Distance:1.327365
+000000371	Distance:1.329431
+000000278	Distance:1.330088
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.001149
+Query point 67: found 606 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000121	Distance:1.296416
+000000560	Distance:1.303528
+000000998	Distance:1.309160
+000000508	Distance:1.316663
+000000524	Distance:1.322860
+000000280	Distance:1.329184
+000000117	Distance:1.331145
+000000146	Distance:1.333977
+000000766	Distance:1.336920
+000000362	Distance:1.339094
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000568
+Query point 68: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000032	Distance:1.276932
+000000548	Distance:1.300198
+000000177	Distance:1.314311
+000000609	Distance:1.316056
+000000756	Distance:1.319383
+000000487	Distance:1.321602
+000000868	Distance:1.324623
+000000040	Distance:1.327026
+000000363	Distance:1.329064
+000000801	Distance:1.329658
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000564
+Query point 69: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000099	Distance:1.291421
+000000940	Distance:1.296747
+000000460	Distance:1.320074
+000000806	Distance:1.321860
+000000430	Distance:1.325496
+000000945	Distance:1.325653
+000000545	Distance:1.327901
+000000501	Distance:1.330290
+000000141	Distance:1.332134
+000000396	Distance:1.335130
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000571
+Query point 70: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000445	Distance:1.293960
+000000318	Distance:1.296379
+000000425	Distance:1.297950
+000000302	Distance:1.301287
+000000358	Distance:1.301475
+000000673	Distance:1.304331
+000000739	Distance:1.312371
+000000450	Distance:1.315066
+000000333	Distance:1.318722
+000000482	Distance:1.319649
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.001139
+Query point 71: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000179	Distance:1.282511
+000000864	Distance:1.303146
+000000207	Distance:1.306607
+000000594	Distance:1.315873
+000000518	Distance:1.320252
+000000250	Distance:1.324395
+000000440	Distance:1.327003
+000000421	Distance:1.332341
+000000056	Distance:1.335447
+000000627	Distance:1.338411
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000253
+Query point 72: found 394 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000326	Distance:1.319668
+000000330	Distance:1.329061
+000000214	Distance:1.330156
+000000682	Distance:1.330266
+000000429	Distance:1.332729
+000000673	Distance:1.333406
+000000060	Distance:1.337239
+000000838	Distance:1.338045
+000000374	Distance:1.340247
+000000028	Distance:1.341304
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000525
+Query point 73: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000415	Distance:1.285827
+000000432	Distance:1.304605
+000000678	Distance:1.313602
+000000367	Distance:1.322094
+000000391	Distance:1.322608
+000000964	Distance:1.324539
+000000516	Distance:1.325494
+000000446	Distance:1.330213
+000000746	Distance:1.330893
+000000891	Distance:1.337674
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000607
+Query point 74: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000346	Distance:1.304932
+000000410	Distance:1.309589
+000000441	Distance:1.315027
+000000049	Distance:1.318056
+000000055	Distance:1.319314
+000000914	Distance:1.326335
+000000712	Distance:1.327296
+000000065	Distance:1.327331
+000000764	Distance:1.328611
+000000454	Distance:1.329342
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000662
+Query point 75: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000894	Distance:1.265505
+000000884	Distance:1.280131
+000000377	Distance:1.295099
+000000637	Distance:1.296004
+000000941	Distance:1.304602
+000000093	Distance:1.309800
+000000931	Distance:1.311439
+000000956	Distance:1.316811
+000000459	Distance:1.317551
+000000244	Distance:1.318834
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000574
+Query point 76: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000329	Distance:1.273451
+000000423	Distance:1.296356
+000000397	Distance:1.309335
+000000687	Distance:1.314376
+000000840	Distance:1.319048
+000000277	Distance:1.327633
+000000679	Distance:1.328147
+000000862	Distance:1.329797
+000000484	Distance:1.331712
+000000320	Distance:1.333311
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000236
+Query point 77: found 379 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000034	Distance:1.297676
+000000791	Distance:1.304135
+000000896	Distance:1.320777
+000000713	Distance:1.329392
+000000221	Distance:1.329824
+000000102	Distance:1.334538
+000000060	Distance:1.341882
+000000887	Distance:1.344325
+000000520	Distance:1.347366
+000000161	Distance:1.347753
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000549
+Query point 78: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000998	Distance:1.319953
+000000663	Distance:1.320590
+000000018	Distance:1.322409
+000000939	Distance:1.322482
+000000747	Distance:1.325483
+000000418	Distance:1.325711
+000000727	Distance:1.328834
+000000254	Distance:1.331162
+000000952	Distance:1.334061
+000000223	Distance:1.334069
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000603
+Query point 79: found 895 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000459	Distance:1.286305
+000000236	Distance:1.299566
+000000525	Distance:1.302914
+000000633	Distance:1.305884
+000000917	Distance:1.307685
+000000284	Distance:1.310324
+000000076	Distance:1.312162
+000000054	Distance:1.314152
+000000216	Distance:1.315202
+000000269	Distance:1.315281
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000439
+Query point 80: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000420	Distance:1.292613
+000000950	Distance:1.320518
+000000646	Distance:1.320818
+000000135	Distance:1.325469
+000000998	Distance:1.327837
+000000812	Distance:1.328056
+000000003	Distance:1.328184
+000000341	Distance:1.329337
+000000518	Distance:1.332121
+000000834	Distance:1.332803
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000900
+Query point 81: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000244	Distance:1.306570
+000000533	Distance:1.312087
+000000575	Distance:1.315579
+000000801	Distance:1.317263
+000000845	Distance:1.318218
+000000956	Distance:1.320279
+000000383	Distance:1.320625
+000000131	Distance:1.321888
+000000305	Distance:1.323652
+000000586	Distance:1.326070
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000250
+Query point 82: found 379 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000846	Distance:1.287675
+000000676	Distance:1.322047
+000000890	Distance:1.328829
+000000363	Distance:1.331077
+000000315	Distance:1.336900
+000000292	Distance:1.337463
+000000287	Distance:1.338498
+000000165	Distance:1.339073
+000000628	Distance:1.339641
+000000390	Distance:1.341186
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000646
+Query point 83: found 603 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000395	Distance:1.315107
+000000403	Distance:1.325701
+000000245	Distance:1.326654
+000000519	Distance:1.327536
+000000977	Distance:1.332624
+000000754	Distance:1.333616
+000000088	Distance:1.333831
+000000623	Distance:1.334473
+000000581	Distance:1.336695
+000000783	Distance:1.338604
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000419
+Query point 84: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000320	Distance:1.304897
+000000931	Distance:1.309394
+000000115	Distance:1.315142
+000000059	Distance:1.317300
+000000581	Distance:1.321835
+000000608	Distance:1.324777
+000000484	Distance:1.328197
+000000835	Distance:1.330465
+000000256	Distance:1.331386
+000000288	Distance:1.332491
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000567
+Query point 85: found 908 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000971	Distance:1.292995
+000000056	Distance:1.295537
+000000311	Distance:1.303669
+000000427	Distance:1.306000
+000000781	Distance:1.318139
+000000525	Distance:1.324155
+000000895	Distance:1.324553
+000000238	Distance:1.327463
+000000426	Distance:1.331417
+000000586	Distance:1.331987
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000487
+Query point 86: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000643	Distance:1.291636
+000000456	Distance:1.306627
+000000636	Distance:1.311189
+000000683	Distance:1.326456
+000000494	Distance:1.327871
+000000528	Distance:1.328971
+000000216	Distance:1.334366
+000000650	Distance:1.336021
+000000952	Distance:1.336630
+000000670	Distance:1.338414
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000924
+Query point 87: found 747 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000076	Distance:1.298215
+000000641	Distance:1.315513
+000000244	Distance:1.317840
+000000293	Distance:1.319449
+000000507	Distance:1.322358
+000000455	Distance:1.325804
+000000686	Distance:1.327423
+000000372	Distance:1.327717
+000000602	Distance:1.329748
+000000127	Distance:1.330586
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000325
+Query point 88: found 394 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000861	Distance:1.310043
+000000196	Distance:1.326745
+000000076	Distance:1.329973
+000000543	Distance:1.331176
+000000707	Distance:1.333931
+000000882	Distance:1.335907
+000000001	Distance:1.336567
+000000651	Distance:1.337342
+000000060	Distance:1.337611
+000000869	Distance:1.340691
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000344
+Query point 89: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000462	Distance:1.293171
+000000536	Distance:1.303547
+000000166	Distance:1.315539
+000000282	Distance:1.317527
+000000175	Distance:1.321019
+000000687	Distance:1.327322
+000000241	Distance:1.328729
+000000594	Distance:1.329005
+000000159	Distance:1.329953
+000000778	Distance:1.331872
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000630
+Query point 90: found 817 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000389	Distance:1.305701
+000000149	Distance:1.307821
+000000362	Distance:1.311942
+000000555	Distance:1.313936
+000000915	Distance:1.315066
+000000244	Distance:1.321422
+000000879	Distance:1.322163
+000000059	Distance:1.322296
+000000595	Distance:1.322813
+000000404	Distance:1.326143
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000448
+Query point 91: found 694 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000584	Distance:1.293326
+000000468	Distance:1.298105
+000000673	Distance:1.309934
+000000990	Distance:1.316801
+000000254	Distance:1.320227
+000000235	Distance:1.321896
+000000257	Distance:1.324148
+000000855	Distance:1.325779
+000000648	Distance:1.325966
+000000720	Distance:1.330906
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000502
+Query point 92: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000495	Distance:1.276601
+000000612	Distance:1.291679
+000000771	Distance:1.311013
+000000775	Distance:1.312002
+000000208	Distance:1.312864
+000000831	Distance:1.317431
+000000797	Distance:1.319693
+000000459	Distance:1.321851
+000000296	Distance:1.324403
+000000994	Distance:1.326254
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000282
+Query point 93: found 394 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000787	Distance:1.290598
+000000191	Distance:1.306370
+000000265	Distance:1.315205
+000000416	Distance:1.321890
+000000258	Distance:1.326487
+000000040	Distance:1.331293
+000000923	Distance:1.331309
+000000095	Distance:1.335457
+000000835	Distance:1.337481
+000000141	Distance:1.338048
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000487
+Query point 94: found 700 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000277	Distance:1.300629
+000000529	Distance:1.300895
+000000525	Distance:1.302586
+000000257	Distance:1.313739
+000000272	Distance:1.320456
+000000462	Distance:1.320701
+000000803	Distance:1.324718
+000000032	Distance:1.327419
+000000570	Distance:1.331476
+000000866	Distance:1.334340
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000893
+Query point 95: found 857 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000990	Distance:1.304161
+000000707	Distance:1.311930
+000000450	Distance:1.314745
+000000108	Distance:1.317354
+000000947	Distance:1.319444
+000000340	Distance:1.321398
+000000416	Distance:1.322187
+000000249	Distance:1.326391
+000000629	Distance:1.327504
+000000620	Distance:1.332672
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000287
+Query point 96: found 379 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000788	Distance:1.303389
+000000177	Distance:1.312529
+000000102	Distance:1.313864
+000000429	Distance:1.320046
+000000258	Distance:1.324344
+000000679	Distance:1.325174
+000000249	Distance:1.328132
+000000172	Distance:1.328166
+000000381	Distance:1.329085
+000000343	Distance:1.331123
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000305
+Query point 97: found 379 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000700	Distance:1.318630
+000000755	Distance:1.321230
+000000498	Distance:1.322020
+000000932	Distance:1.329228
+000000421	Distance:1.329541
+000000873	Distance:1.330279
+000000713	Distance:1.331120
+000000305	Distance:1.332211
+000000993	Distance:1.333480
+000000454	Distance:1.334334
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000387
+Query point 98: found 519 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000251	Distance:1.316733
+000000121	Distance:1.322598
+000000804	Distance:1.323357
+000000802	Distance:1.334790
+000000917	Distance:1.336274
+000000539	Distance:1.338329
+000000934	Distance:1.338496
+000000172	Distance:1.338844
+000000890	Distance:1.339095
+000000775	Distance:1.339644
+Total time for R-NN query at radius 6.000000 (radius no. 0):	0.000514
+Query point 99: found 805 NNs at distance 6.000000 (0th radius). First 10 NNs are:
+000000604	Distance:1.299324
+000000510	Distance:1.306020
+000000564	Distance:1.306863
+000000047	Distance:1.307758
+000000405	Distance:1.309962
+000000607	Distance:1.312613
+000000892	Distance:1.318828
+000000358	Distance:1.319941
+000000318	Distance:1.320096
+000000546	Distance:1.322354
+Mean query time: 0.000590
+
+real	0m2.639s
+user	0m0.238s
+sys	0m0.014s

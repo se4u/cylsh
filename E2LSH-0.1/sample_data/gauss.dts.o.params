@@ -1,0 +1,1 @@
+Usage: bin/LSHMain #pts_in_data_set #queries dimension successProbability radius data_set_file query_points_file max_available_memory [-c|-p params_file]

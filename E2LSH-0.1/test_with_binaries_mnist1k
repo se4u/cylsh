@@ -1,0 +1,84 @@
+bin/lsh 0.8 sample_data/mnist1k.dts.mips sample_data/mnist1k.q.mips
+R
+0.800000012
+Success probability
+0.899999976
+Dimension
+785
+R^2
+0.640000045
+Use <u> functions
+1
+k
+12
+m 
+14
+L
+91
+W
+4.000000000
+T
+1000
+typeHT
+3
+1000 9 785
+running command:  bin/LSHMain 1000 9 785 0.9 1.0 sample_data/mnist1k.dts.mips sample_data/mnist1k.q.mips 22020096 -p sample_data/mnist1k.dts.mips.params
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000249
+Query point 0: found 2 NNs at distance 0.700000 (0th radius). First 2 NNs are:
+000000794	Distance:0.504295	Rank:1
+000000965	Distance:0.663790	Rank:4
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000550
+Query point 1: found 8 NNs at distance 0.700000 (0th radius). First 8 NNs are:
+000000899	Distance:0.617241	Rank:1
+000000766	Distance:0.628873	Rank:2
+000000351	Distance:0.638607	Rank:3
+000000344	Distance:0.640353	Rank:4
+000000807	Distance:0.645848	Rank:5
+000000232	Distance:0.662121	Rank:7
+000000382	Distance:0.682947	Rank:8
+000000132	Distance:0.698890	Rank:9
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000413
+Query point 2: found 5 NNs at distance 0.700000 (0th radius). First 5 NNs are:
+000000645	Distance:0.677401	Rank:1
+000000356	Distance:0.679310	Rank:2
+000000045	Distance:0.696017	Rank:3
+000000450	Distance:0.697047	Rank:4
+000000491	Distance:0.699407	Rank:5
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000229
+Query point 3: found 5 NNs at distance 0.700000 (0th radius). First 5 NNs are:
+000000463	Distance:0.560556	Rank:1
+000000384	Distance:0.593675	Rank:2
+000000600	Distance:0.666050	Rank:3
+000000462	Distance:0.669971	Rank:4
+000000886	Distance:0.683208	Rank:5
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000520
+Query point 4: found 7 NNs at distance 0.700000 (0th radius). First 7 NNs are:
+000000805	Distance:0.616400	Rank:1
+000000580	Distance:0.668778	Rank:2
+000000448	Distance:0.669588	Rank:3
+000000474	Distance:0.680387	Rank:4
+000000761	Distance:0.687736	Rank:5
+000000864	Distance:0.690304	Rank:6
+000000391	Distance:0.694925	Rank:7
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000253
+Query point 5: found 2 NNs at distance 0.700000 (0th radius). First 2 NNs are:
+000000304	Distance:0.654943	Rank:1
+000000707	Distance:0.676147	Rank:2
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000350
+Query point 6: found 4 NNs at distance 0.700000 (0th radius). First 4 NNs are:
+000000068	Distance:0.656607	Rank:1
+000000576	Distance:0.660556	Rank:2
+000000451	Distance:0.668126	Rank:3
+000000093	Distance:0.686215	Rank:4
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000394
+Query point 7: found 6 NNs at distance 0.700000 (0th radius). First 6 NNs are:
+000000501	Distance:0.548860	Rank:1
+000000099	Distance:0.582152	Rank:2
+000000678	Distance:0.670829	Rank:3
+000000105	Distance:0.696171	Rank:4
+000000016	Distance:0.696732	Rank:5
+000000150	Distance:0.699631	Rank:6
+Total time for R-NN query at radius 0.700000 (radius no. 0):	0.000324
+Query point 8: found 1 NNs at distance 0.700000 (0th radius). First 1 NNs are:
+000000371	Distance:0.617392	Rank:1
+Mean query time: 0.000365

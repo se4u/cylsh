@@ -59,18 +59,23 @@ cython_binding_%: # 5Dicpc -fast
 e example_cython_api:
 	time PYTHONPATH=$$PWD/sources_py python -c "import cylsh, numpy; db=cylsh.LSH(0.7, 0.9,numpy.asarray([[.1, .7],[.11, .69]]), numpy.asarray([[.1, .7]]), 1e6); print db.query(numpy.array([.1, .7]));"
 
-TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $* $+
-t: test_mnist1k_cython_mips test_guass_cython_mips
-test_mnist1k_cython_%: sample_data/mnist1k.dts sample_data/mnist1k.q
-	$(TEST_CMD)
-test_guass_cython_%: sample_data/guass.dts sample_data/guass.q
-	$(TEST_CMD)
-
 clean:
 	rm -rf sources_py/build sources_py/cylsh.cpp cylsh.so bin/LSHMain bin/compareOutputs bin/exactNNs
 
 create_appended_data_file_for_use_with_binaries_%: sample_data/%.dts sample_data/%.q
 	python sources_py/convert_mnist_data_to_bounded_data_by_dividing_by_norm_and_appending_diff.py $(word 1,$+) train > $(word 1,$+).mips
 	python sources_py/convert_mnist_data_to_bounded_data_by_dividing_by_norm_and_appending_diff.py $(word 2,$+) query > $(word 2,$+).mips
-test_with_binaries_%:
-	bin/lsh 6 sample_data/$*.dts.mips sample_data/$*.q.mips 
+
+BINARY_DEP = sample_data/%.dts.mips sample_data/%.q.mips
+R := 0.7
+test_with_binaries_%: $(BINARY_DEP)
+	bin/lsh $(R) $+ | tee $@
+how_good_are_binaries_%: $(BINARY_DEP)
+	python src/how_good_are_binaries_at_mips.py $+ test_with_binaries_$*
+
+TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $* $(R) $+ | tee $@
+t: test_mnist1k_cython_mips test_guass_cython_mips
+test_mnist1k_cython_%: sample_data/mnist1k.dts sample_data/mnist1k.q
+	$(TEST_CMD)
+test_guass_cython_%: sample_data/guass.dts sample_data/guass.q
+	$(TEST_CMD)
