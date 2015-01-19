@@ -141,14 +141,14 @@ cdef class LSH:
             resultSize,
             self.dimension)
         
-        st = time.clock()
+        st = time.time()
         num_neighbor = getRNearNeighbors(
             self._nnStruct,
             &queryPoint,
             result,
             resultSize
             )
-        et = time.clock() - st
+        et = time.time() - st
         ret_list = np.zeros(num_neighbor, np.int)
         for i in xrange(num_neighbor):
             ret_list[i] = result[i].index

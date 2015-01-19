@@ -8,6 +8,7 @@ from Cython.Distutils import build_ext
 import os, numpy
 macros=[]
 compile_time_env = {}
+
 if os.environ["DOMIPS"]=="-DPERFORM_NEYSHABUR_MIPS":
     compile_time_env["DOMIPS"]="yes"
 else:
@@ -45,3 +46,4 @@ setup(name = "cylsh",
                             ),
       cmdclass={"build_ext": build_ext}
       )
+

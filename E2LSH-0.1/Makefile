@@ -23,7 +23,7 @@ TEST_BUILDS:=exactNNs \
 	    genPlantedDS
 
 GCC:=g++ -O3
-OPTIONS =  -DREAL_FLOAT $$MIPS -DDEBUG 
+OPTIONS =  -DREAL_FLOAT $$MIPS # -DDEBUG 
 # -march=athlon -msse -mfpmath=sse
 LIBRARIES:=-lm 
 #-ldmalloc
@@ -46,11 +46,11 @@ CC = $$MYCOMPILER $(OPTIONS)
 CXX = $$MYCOMPILER $(OPTIONS)
 ## CYTHON BINDING CREATION CODE
 s: cython_binding_mips
-cython_binding_%: # 5Dicpc -fast
+cython_binding_%: 
 	if which icpc >	/dev/null; then\
           export MYCOMPILER='icpc -fast';\
         else\
-          export MYCOMPILER=='g++ -O3';\
+          export MYCOMPILER='g++ -O3';\
         fi; \
 	$(MIPS_OPT_EXTRACTOR);\
 	cd sources_py; \
@@ -61,13 +61,23 @@ example:
 	time PYTHONPATH=$$PWD/sources_py python -c "import cylsh, numpy; db=cylsh.LSH(0.7, 0.9,numpy.asarray([[.1, .7],[.11, .69]]), numpy.asarray([[.1, .7]]), 1e6); print db.query(numpy.array([.1, .7]));"
 
 ## TESTING CODE
-test: test_mnist1k_cython_mips test_guass_cython_mips
-test_mnist1k_cython_%: sample_data/mnist1k.dts sample_data/mnist1k.q
-	PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $* 0.7 $+ | tee $@
-
+test: test_mnist1k_cython_mips test_gauss_cython_mips
 TEST_OPT_EXTRACTOR = $(word $1,$(subst ~, ,$*))
-test_gauss_cython_%: sample_data/gauss.dts sample_data/gauss.q
-	PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $(call TEST_OPT_EXTRACTOR,1) $+ $(call TEST_OPT_EXTRACTOR,2) $(call TEST_OPT_EXTRACTOR,3) $(call TEST_OPT_EXTRACTOR,4) | tee $@
+TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $(call TEST_OPT_EXTRACTOR,1) $+ $(call TEST_OPT_EXTRACTOR,2) $(call TEST_OPT_EXTRACTOR,3) $(call TEST_OPT_EXTRACTOR,4) > $@
+QSUB1 := qsub -b y -q all.q -V -j y -r yes -cwd submit_grid_stub.sh 
+test_mnist1k_cython_%: sample_data/mnist1k.dts sample_data/mnist1k.q
+	$(TEST_CMD)
+process_logs:
+	python sources_py/process_logs.py "17 17.5 18 18.5 19 19.5 20" "2 4 6 8" "0.9 0.92 0.94 0.96 0.98"
+
+qsub_gauss_cython:
+	for R in 17 17.5 18 18.5 19 19.5 20; do \
+	   for K in 2 4 6 8; do \
+		for p in 0.9 0.92 0.94 0.96 0.98; do\
+		  $(QSUB1) log/test_gauss_cython_mips~"$$R"~"$$K"~"$$p";\
+		done; done; done
+log/test_gauss_cython_%: sample_data/gauss.dts sample_data/gauss.q
+	$(TEST_CMD)
 
 R := 0.7
 BINARY_DEP = sample_data/%.dts.mips sample_data/%.q.mips
