@@ -404,7 +404,7 @@ RNNParametersT computeOptimalParameters(RealT R,
   optParameters.typeHT = HT_HYBRID_CHAINS;
   
   // Compute the run-time parameters (timings of different parts of the algorithm).
-  IntT nReps = 10; // # number of repetions
+  IntT nReps = 2; // # number of repetions
   RealT lshPrecomp = 0, uhashOver = 0, distComp = 0;
   for(IntT i = 0; i < nReps; i++){
     RealT lP, uO, dC;

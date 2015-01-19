@@ -9,7 +9,7 @@ import numpy as np
 cimport numpy as np
 np.import_array()
 cimport lsh
-from lsh cimport PRNearNeighborStructT, PointT, PPointT, IntT, Int32T, RealT, initSelfTunedRNearNeighborWithDataSet, getRNearNeighbors
+from lsh cimport PRNearNeighborStructT, PointT, PPointT, IntT, Int32T, RealT, initSelfTunedRNearNeighborWithDataSet, getRNearNeighbors, computeOptimalParameters, initLSH_WithDataSet, RNNParametersT
 #from cpython.mem cimport PyMem_Malloc, PyMem_Free
 from libc.stdlib cimport malloc, free
 DTYPE=np.float
@@ -55,22 +55,25 @@ cdef class LSH:
     >>> print db.query(np.asarray([.1, .7, 0]))
     """
     cdef PRNearNeighborStructT _nnStruct
-    cdef PPointT* _p_dataset
-    cdef PPointT* _p_sampleQueries
     cdef int dimension
-    def __cinit__(self,
+    def __cinit__(self):
+        return
+
+    @staticmethod
+    def optimize_and_initialize(
                   float thresholdR,
                   float successProbability,
                   np.ndarray[DTYPE_t, ndim=2] dataset,
                   np.ndarray[DTYPE_t, ndim=2] sampleQueries,
                   int memoryUpperBound,
+                  bint debug
                   ):
         """ The dataset is a numpy ndarray with datapoint x dimension
         size. Every datapoint only has unit norm.
         """
+        self=LSH()
         cdef int len_dataset = dataset.shape[0] 
         cdef int len_sampleQueries = sampleQueries.shape[0]
-
         # Preprocessor Hack to simplify the API and pass compile
         # time information.
         IF DOMIPS == "yes":
@@ -78,11 +81,15 @@ cdef class LSH:
             max_norm=np.max(norm_dataset)
             slack = np.expand_dims(np.sqrt(1 - np.square(norm_dataset/max_norm)),
                                   axis=1)
-            #print dataset.shape[0], dataset.shape[1], slack.shape[0], slack.shape[1]
+            if debug:
+                print dataset.shape[0], dataset.shape[1], slack.shape[0], \
+                    slack.shape[1]
             dataset = np.concatenate((dataset/max_norm, slack), axis=1)
-            norm_query = np.sqrt(np.sum(np.square(sampleQueries), axis=1))
-            slack = np.zeros([len_sampleQueries, 1], DTYPE)
-            sampleQueries = np.concatenate((sampleQueries, slack), axis=1)
+            norm_query = np.sqrt(np.sum(np.square(sampleQueries),
+                                        axis=1))
+            sampleQueries = np.concatenate(
+                (sampleQueries, np.zeros([len_sampleQueries, 1], DTYPE)),
+                axis=1)
         ELSE:
             pass
         ## The Above code would simply be excluded if DOMIPS
@@ -105,7 +112,7 @@ cdef class LSH:
             _p_sampleQueries,
             memoryUpperBound
             )
-        return
+        return self
     
     def query(self, np.ndarray[DTYPE_t, ndim=1] queryvector):
         """ We must ensure in python code that the query vectors
@@ -148,6 +155,54 @@ cdef class LSH:
         return dict(neighbors=ret_list,
                     time_taken=et)
 
+    @staticmethod
+    def compute_optimal_parameters(
+        float R,
+        float successProbability, 
+        np.ndarray[DTYPE_t, ndim=2] dataset,
+        np.ndarray[DTYPE_t, ndim=2] sampleQueries,
+        int memoryUpperBound,
+        ):
+        cdef int nPoints = dataset.shape[0]
+        cdef int dimension = dataset.shape[1]
+        cdef int nSampleQueries = sampleQueries.shape[0]
+        return computeOptimalParameters(
+            R,
+            successProbability, 
+            nPoints,
+            dimension,
+            create_dataset_ptr(dataset, nPoints, dimension),
+            nSampleQueries,
+            create_dataset_ptr(sampleQueries, nSampleQueries, dimension),
+            memoryUpperBound)
+
+    @staticmethod
+    def init_manually(dict params,
+                      np.ndarray[DTYPE_t, ndim=2] dataset):
+        self=LSH()
+        cdef int nPoints = dataset.shape[0]
+        cdef int dimension = dataset.shape[1]
+        self.dimension = dimension
+        self._nnStruct = initLSH_WithDataSet(
+            RNNParametersT(
+                parameterR=params['parameterR'],
+                successProbability=params['successProbability'],
+                dimension=params['dimension'],
+                parameterR2=params['parameterR2'],
+                useUfunctions=params['useUfunctions'],
+                parameterK=params['parameterK'],
+                parameterM=params['parameterM'],
+                parameterL=params['parameterL'],
+                parameterW=params['parameterW'],
+                parameterT=params['parameterT'],
+                typeHT=params['typeHT']),
+            nPoints,
+            create_dataset_ptr(dataset,
+                               nPoints,
+                               dimension)
+            )
+        return self
+    
     def __dealloc__(self):
         """ Implement me
         """ 
