@@ -25,9 +25,8 @@ This project serves two purpose together.
 2. Neyshabur et. al. (2014)[1] presented a clever modification to E2LSH
    to perform Maximum Inner Product Search. The code change was really
    small and it only needed like 10 lines of change to the following
-   files to implement. So I added a flag to perform that as well.
+   files to implement. So I added a flag to perform that as well in the Makefile.
    ```
-   grep PERFORM_NEYSHABUR_MIPS in the following files:
    E2LSH-0.1/sources/Geometry.h
    E2LSH-0.1/sources/LocalitySensitiveHashing.h
    E2LSH-0.1/sources/LocalitySensitiveHashing.cpp
