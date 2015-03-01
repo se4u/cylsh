@@ -27,6 +27,7 @@ This project serves two purpose together.
    small and it only needed like 10 lines of change to the following
    files to implement. So I added a flag to perform that as well.
    ```
+   grep PERFORM_NEYSHABUR_MIPS in the following files:
    E2LSH-0.1/sources/Geometry.h
    E2LSH-0.1/sources/LocalitySensitiveHashing.h
    E2LSH-0.1/sources/LocalitySensitiveHashing.cpp
