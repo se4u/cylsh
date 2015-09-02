@@ -1,4 +1,6 @@
-This project serves two purpose together.
+The code from this project was used for ["Sublinear Partition Estimation"](http://arxiv.org/abs/1508.01596), Pushpendre Rastogi, Benjamin Van Durme, arXiv:1508.01596 [stat.ML] (Preprint).
+
+This project serves two purposes:
 
 1. It provides bindings for the LSH cpp code that was released by
    Andoni in Python. Original code is at www.mit.edu/~andoni/LSH.
