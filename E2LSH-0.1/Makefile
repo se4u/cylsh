@@ -28,6 +28,21 @@ OPTIONS =  -DREAL_FLOAT $$MIPS # -DDEBUG
 LIBRARIES:=-lm
 #-ldmalloc
 MIPS_OPT_EXTRACTOR = if [ $* == mips ] ; then export MIPS=-DPERFORM_NEYSHABUR_MIPS; else export MIPS=-DNO_MIPS; fi; echo $$MIPS
+CC = $$MYCOMPILER $(OPTIONS)
+CXX = $$MYCOMPILER $(OPTIONS)
+## CYTHON BINDING CREATION CODE
+default: cython_binding_mips # Change this to cython_binding_e2lsh for normal lsh.
+cython_binding_%:
+	if which icpc >	/dev/null; then\
+          export MYCOMPILER='icpc -fast';\
+        else\
+          export MYCOMPILER='g++ -O3';\
+        fi; \
+	$(MIPS_OPT_EXTRACTOR);\
+	cd sources_py; \
+	CC="$(CC)" CXX="$(CXX)" DOMIPS=$$MIPS python setup.py build_ext --inplace
+
+
 binaries_%:
 	$(MIPS_OPT_EXTRACTOR);\
 	$(MAKE) c && $(MAKE) ct
@@ -42,19 +57,6 @@ ct:
 	(for i in $(TEST_BUILDS); do \
 	 $(GCC) -o $(OUT_DIR)/$$i $(OPTIONS) $(OBJ_SOURCES) $(TEST_DIR)/$${i}.cpp $(LIBRARIES); chmod g+rwx $(OUT_DIR)/$$i; done)
 
-CC = $$MYCOMPILER $(OPTIONS)
-CXX = $$MYCOMPILER $(OPTIONS)
-## CYTHON BINDING CREATION CODE
-s: cython_binding_mips
-cython_binding_%:
-	if which icpc >	/dev/null; then\
-          export MYCOMPILER='icpc -fast';\
-        else\
-          export MYCOMPILER='g++ -O3';\
-        fi; \
-	$(MIPS_OPT_EXTRACTOR);\
-	cd sources_py; \
-	CC="$(CC)" CXX="$(CXX)" DOMIPS=$$MIPS python setup.py build_ext --inplace
 
 ## EXAMPLE
 example:
@@ -63,7 +65,8 @@ example:
 ## TESTING CODE
 test: test_mnist1k_cython_mips # test_gauss_cython_mips
 TEST_OPT_EXTRACTOR = $(word $1,$(subst ~, ,$*))
-TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $(call TEST_OPT_EXTRACTOR,1) $+ $(call TEST_OPT_EXTRACTOR,2) $(call TEST_OPT_EXTRACTOR,3) $(call TEST_OPT_EXTRACTOR,4) > $@
+# TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $(call TEST_OPT_EXTRACTOR,1) $+ $(call TEST_OPT_EXTRACTOR,2) $(call TEST_OPT_EXTRACTOR,3) $(call TEST_OPT_EXTRACTOR,4) > $@
+TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py
 QSUB1 := qsub -b y -q all.q -V -j y -r yes -cwd submit_grid_stub.sh
 test_mnist1k_cython_%: sample_data/mnist1k.dts sample_data/mnist1k.q
 	$(TEST_CMD)
