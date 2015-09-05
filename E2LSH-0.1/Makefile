@@ -23,9 +23,9 @@ TEST_BUILDS:=exactNNs \
 	    genPlantedDS
 
 GCC:=g++ -O3
-OPTIONS =  -DREAL_FLOAT $$MIPS # -DDEBUG 
+OPTIONS =  -DREAL_FLOAT $$MIPS # -DDEBUG
 # -march=athlon -msse -mfpmath=sse
-LIBRARIES:=-lm 
+LIBRARIES:=-lm
 #-ldmalloc
 MIPS_OPT_EXTRACTOR = if [ $* == mips ] ; then export MIPS=-DPERFORM_NEYSHABUR_MIPS; else export MIPS=-DNO_MIPS; fi; echo $$MIPS
 binaries_%:
@@ -46,7 +46,7 @@ CC = $$MYCOMPILER $(OPTIONS)
 CXX = $$MYCOMPILER $(OPTIONS)
 ## CYTHON BINDING CREATION CODE
 s: cython_binding_mips
-cython_binding_%: 
+cython_binding_%:
 	if which icpc >	/dev/null; then\
           export MYCOMPILER='icpc -fast';\
         else\
@@ -54,17 +54,17 @@ cython_binding_%:
         fi; \
 	$(MIPS_OPT_EXTRACTOR);\
 	cd sources_py; \
-	CC="$(CC)" CXX="$(CXX)" DOMIPS=$$MIPS python setup.py build_ext --inplace 
+	CC="$(CC)" CXX="$(CXX)" DOMIPS=$$MIPS python setup.py build_ext --inplace
 
 ## EXAMPLE
 example:
 	time PYTHONPATH=$$PWD/sources_py python -c "import cylsh, numpy; db=cylsh.LSH(0.7, 0.9,numpy.asarray([[.1, .7],[.11, .69]]), numpy.asarray([[.1, .7]]), 1e6); print db.query(numpy.array([.1, .7]));"
 
 ## TESTING CODE
-test: test_mnist1k_cython_mips test_gauss_cython_mips
+test: test_mnist1k_cython_mips # test_gauss_cython_mips
 TEST_OPT_EXTRACTOR = $(word $1,$(subst ~, ,$*))
 TEST_CMD = PYTHONPATH=$$PWD/sources_py python sources_py/test_api.py $(call TEST_OPT_EXTRACTOR,1) $+ $(call TEST_OPT_EXTRACTOR,2) $(call TEST_OPT_EXTRACTOR,3) $(call TEST_OPT_EXTRACTOR,4) > $@
-QSUB1 := qsub -b y -q all.q -V -j y -r yes -cwd submit_grid_stub.sh 
+QSUB1 := qsub -b y -q all.q -V -j y -r yes -cwd submit_grid_stub.sh
 test_mnist1k_cython_%: sample_data/mnist1k.dts sample_data/mnist1k.q
 	$(TEST_CMD)
 process_logs:
@@ -93,5 +93,3 @@ clean:
 create_appended_data_file_for_use_with_binaries_%: sample_data/%.dts sample_data/%.q
 	python sources_py/convert_mnist_data_to_bounded_data_by_dividing_by_norm_and_appending_diff.py $(word 1,$+) train > $(word 1,$+).mips
 	python sources_py/convert_mnist_data_to_bounded_data_by_dividing_by_norm_and_appending_diff.py $(word 2,$+) query > $(word 2,$+).mips
-
-

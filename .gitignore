@@ -1,11 +1,5 @@
-E2LSH-0.1/sources_py/build/*
-*bin/mem
-*.DS_Store
-E2LSH-0.1/bin/mem
-E2LSH-0.1/bin/LSHMain
-E2LSH-0.1/bin/exactNNs
-E2LSH-0.1/bin/genDS
-E2LSH-0.1/bin/compareOutputs
-E2LSH-0.1/bin/genPlantedDS
+E2LSH-0.1/sources_py/build
+.DS_Store
+E2LSH-0.1/bin
 E2LSH-0.1/sources_py/cylsh.cpp
 E2LSH-0.1/sources_py/cylsh.so
