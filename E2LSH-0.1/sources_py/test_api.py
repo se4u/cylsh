@@ -29,6 +29,18 @@ except:
     K = 2
     p = 0.9
 assert LSH_OR_MIPS in ["lsh", "mips"]
+# Note that the mnist1k.dts dataset contains vectors that have
+# the exact same magnitude. This command demonstrates this.
+# np.linalg.norm([np.linalg.norm(dataset[i]) - 1 for i in range(1000)])
+# If we want to see the difference between using MIPS and
+# E2LSH then we can randomly scale the data in the dataset and then
+# the results between E2LSH and MIPS would be different
+# For example after loading the dataset do this
+print 'randomly rescaling the data to demonstrate the distance between LSH and mips'
+import random
+random.seed(1234)
+np.random.seed(1234)
+dataset = dataset * (np.random.rand(dataset.shape[0]) * 2 + 0.5)[:, None]
 measure = ('distance' if LSH_OR_MIPS == 'lsh' else 'InnerProduct')
 seed = 1234
 num_query_pnt = 10
