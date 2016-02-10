@@ -23,15 +23,15 @@ try:
 except:
     print "USING DEFAULT VALUES !!!"
     LSH_OR_MIPS = 'mips'
-    dataset = np.loadtxt('sample_data/mnist1k.dts')
-    queryset = np.loadtxt('sample_data/mnist1k.q')
+    dataset = np.loadtxt('../sample_data/mnist1k.dts')
+    queryset = np.loadtxt('../sample_data/mnist1k.q')
     R = 0.8
     K = 2
     p = 0.9
 assert LSH_OR_MIPS in ["lsh", "mips"]
 # Note that the mnist1k.dts dataset contains vectors that have
 # the exact same magnitude. This command demonstrates this.
-# np.linalg.norm([np.linalg.norm(dataset[i]) - 1 for i in range(1000)])
+# np.linalg.norm([np.linalg.norm(dataset[i]) - 1 for i in range(dataset.shape[0])])
 # If we want to see the difference between using MIPS and
 # E2LSH then we can randomly scale the data in the dataset and then
 # the results between E2LSH and MIPS would be different
@@ -40,7 +40,19 @@ print 'randomly rescaling the data to demonstrate the distance between LSH and m
 import random
 random.seed(1234)
 np.random.seed(1234)
-dataset = dataset * (np.random.rand(dataset.shape[0]) * 2 + 0.5)[:, None]
+dataset = dataset * (np.random.rand(dataset.shape[0]) + 0.5)[:, None]
+
+data_norms = np.linalg.norm(dataset, axis=1)
+max_norm = max(data_norms)
+dataset = dataset / max_norm
+dataset = np.concatenate(
+    (dataset, np.sqrt(1 - (data_norms / max_norm) ** 2)[:, None]), axis=1)
+
+queryset = np.concatenate(
+    (queryset / np.linalg.norm(queryset, axis=1)[:, None],
+     np.zeros((queryset.shape[0], 1))),
+    axis=1)
+
 measure = ('distance' if LSH_OR_MIPS == 'lsh' else 'InnerProduct')
 seed = 1234
 num_query_pnt = 10
